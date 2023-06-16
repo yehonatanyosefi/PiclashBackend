@@ -3,7 +3,7 @@ const storageService = require('../storage/storage.service')
 const logger = require('../../services/logger.service')
 // const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 // import fetch from 'node-fetch'
-
+const fetch = require('cross-fetch')
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
 	apiKey: process.env.OPENAI_API_KEY,
@@ -13,6 +13,7 @@ const openai = new OpenAIApi(configuration)
 const Replicate = require('replicate')
 const replicate = new Replicate({
 	auth: process.env.REPLICATE_API_TOKEN,
+	fetch,
 })
 
 async function dallEGenImg(prompt) {
