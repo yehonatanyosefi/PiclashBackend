@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const fetch = require('node-fetch')
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 const FormData = require('form-data')
 
 const CLOUD_NAME = process.env.CLOUD_NAME
