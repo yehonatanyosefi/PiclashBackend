@@ -1,5 +1,8 @@
 require('dotenv').config()
 
+const fetch = require('node-fetch')
+const FormData = require('form-data')
+
 const CLOUD_NAME = process.env.CLOUD_NAME
 const UPLOAD_PRESET = process.env.UPLOAD_PRESET
 const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`

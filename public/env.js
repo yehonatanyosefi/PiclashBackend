@@ -1,7 +1,7 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\Yehonatan Yosefi\\AppData\\Roaming",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_36344_LJKBLJCANNTGWPUY",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_59440_WMWEJXARUREBOTKW",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
@@ -73,7 +73,7 @@ window.env = {
   "SystemRoot": "C:\\WINDOWS",
   "TEMP": "C:\\Users\\YEHONA~1\\AppData\\Local\\Temp",
   "TERM_PROGRAM": "vscode",
-  "TERM_PROGRAM_VERSION": "1.79.1",
+  "TERM_PROGRAM_VERSION": "1.79.2",
   "TMP": "C:\\Users\\YEHONA~1\\AppData\\Local\\Temp",
   "USERDOMAIN": "Y-PC",
   "USERDOMAIN_ROAMINGPROFILE": "Y-PC",
