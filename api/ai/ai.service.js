@@ -1,20 +1,17 @@
 require('dotenv').config()
 const storageService = require('../storage/storage.service')
-const logger = require('../../services/logger.service')
-// const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
-// import fetch from 'node-fetch'
-const fetch = require('cross-fetch')
-const { Configuration, OpenAIApi } = require('openai')
-const configuration = new Configuration({
-	apiKey: process.env.OPENAI_API_KEY,
-})
-const openai = new OpenAIApi(configuration)
 
+const fetch = require('cross-fetch')
 const Replicate = require('replicate')
 const replicate = new Replicate({
 	auth: process.env.REPLICATE_API_TOKEN,
 	fetch,
 })
+// const { Configuration, OpenAIApi } = require('openai')
+// const configuration = new Configuration({
+// 	apiKey: process.env.OPENAI_API_KEY,
+// })
+// const openai = new OpenAIApi(configuration)
 
 async function dallEGenImg(prompt) {
 	try {
@@ -26,7 +23,7 @@ async function dallEGenImg(prompt) {
 		// const genImgUrl = response.data.data[0].url
 		// return genImgUrl
 	} catch (err) {
-		logger.error('cannot add image', err)
+		console.error('Failed to generate image', err)
 		throw err
 	}
 }
@@ -48,7 +45,7 @@ async function genImg(prompt) {
 		)
 		return output[0]
 	} catch (err) {
-		logger.error('cannot add image', err)
+		console.error('Failed to generate image', err)
 		throw err
 	}
 }
@@ -59,7 +56,7 @@ async function uploadImg(imgUrl) {
 
 		return newImgUrl
 	} catch (err) {
-		logger.error('cannot add image', err)
+		console.error('cannot add image', err)
 		throw err
 	}
 }
