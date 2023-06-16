@@ -3,13 +3,10 @@ const logger = require('../../services/logger.service')
 
 async function postImg(req, res) {
 	try {
-		const body = req.body
-		console.log(`body:`, body)
 		const { prompt } = req.body
-		console.log(`prompt:`, prompt)
-		const imgUrl = await aiService.postImg(prompt)
-		console.log(`imgUrl:`, imgUrl)
-		res.json(imgUrl)
+		const imgUrl = await aiService.genImg(prompt)
+		const newImgUrl = await aiService.uploadImg(imgUrl)
+		res.json(newImgUrl)
 	} catch (err) {
 		logger.error('Failed to post image', err)
 		res.status(500).send({ err: 'Failed to post image' })
