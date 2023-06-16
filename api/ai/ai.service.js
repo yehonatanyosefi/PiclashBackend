@@ -1,8 +1,8 @@
 require('dotenv').config()
 const storageService = require('../storage/storage.service')
 const logger = require('../../services/logger.service')
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 const { Configuration, OpenAIApi } = require('openai')
-
 const configuration = new Configuration({
 	apiKey: process.env.OPENAI_API_KEY,
 })
